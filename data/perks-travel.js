@@ -83,7 +83,7 @@ export const PERKS_TRAVEL = [
   {
     id: 'trv-amtrak-veterans', name: 'Amtrak veterans discount', tier: 'travel', card: 'road', group: 'rail',
     summary: 'Amtrak takes 10% off the regular adult or child Coach rail fare for veterans with a valid military veteran identification card; no membership needed.',
-    eligibility: { statuses: ['active', 'retiree', 'veteran-unrated', 'sc-0', 'sc-10-90', 'sc-100', 'purple-heart', 'pow', 'moh'], minRating: null, ptRequired: false, overseas: false, note: 'Active duty and dependents use an active-duty ID. Coach only; not on sleeper charges or the Canadian portion of joint VIA services. Amtrak does not say which veteran cards count. WeSalute is not mentioned on any Amtrak page.' },
+    eligibility: { statuses: ['active', 'retiree', 'veteran-unrated', 'sc-0', 'sc-10-90', 'sc-100', 'purple-heart', 'pow', 'moh'], minRating: null, ptRequired: false, overseas: false, note: 'Active duty and dependents use an active-duty ID. Coach only; not on sleeper charges or the Canadian portion of joint VIA services. Amtrak does not say which veteran IDs count. WeSalute is not mentioned on any Amtrak page.' },
     credentials: [
       { card: 'vhic-marked', unlocks: '10% off the lowest available Coach rail fare', note: 'Amtrak says a valid military veteran identification card without naming types; bring the VHIC or the VA digital Veteran ID' },
       { card: 'vhic-plain', unlocks: '10% off the lowest available Coach rail fare', note: 'same wording; type not named by Amtrak' },
@@ -101,7 +101,7 @@ export const PERKS_TRAVEL = [
     summary: 'A separate 15% Amtrak offer for veterans and spouses on select California routes, listed on the Amtrak veterans promotion page.',
     eligibility: { statuses: ['retiree', 'veteran-unrated', 'sc-0', 'sc-10-90', 'sc-100', 'purple-heart', 'pow', 'moh'], minRating: null, ptRequired: false, overseas: false, note: 'Veterans and spouses on select California routes; which routes is on the promotion page.' },
     credentials: [
-      { card: 'vhic-marked', unlocks: '15% off on select California routes', note: 'Amtrak does not name which veteran cards count' },
+      { card: 'vhic-marked', unlocks: '15% off on select California routes', note: 'Amtrak does not name which veteran IDs count' },
       { card: 'vhic-plain', unlocks: '15% off on select California routes', note: 'same wording' },
     ],
     value: { type: 'varies', amount: null, assumption: null, cap: null, basis: '15% off on select California routes for veterans and spouses; routes and fares set the dollars.' },

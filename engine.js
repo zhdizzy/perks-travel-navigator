@@ -252,7 +252,10 @@ export function buildChecklist(r, labels) {
       const c = x.heldCred || x.bestCred;
       const tag = x.status === 'unlocked' ? '' : x.status === 'ask' ? ' (ask which ID they accept)' : ' (not yet: get the ID)';
       const conf = x.row.confidence !== 'verified' ? ` [${x.row.confidence}]` : '';
-      return [T(`☐ ${x.row.name}${tag}: bring ${c ? credShort(c.card) : 'nothing'}${c && c.note ? ` (${c.note})` : ''}.${x.row.bring && x.row.bring.length ? ' Also: ' + x.row.bring.join('; ') + '.' : ''}${conf}`)];
+      const short = c ? credShort(c.card) : 'nothing';
+      // A note that only repeats the ID's own name ("DD-214 (DD-214)") adds nothing; drop it.
+      const note = c && c.note && c.note.trim().toLowerCase() !== short.toLowerCase() ? ` (${c.note})` : '';
+      return [T(`☐ ${x.row.name}${tag}: bring ${short}${note}.${x.row.bring && x.row.bring.length ? ' Also: ' + x.row.bring.join('; ') + '.' : ''}${conf}`)];
     });
     if (list.length > 18) items.push([T(`and ${list.length - 18} more on the page`)]);
     if (key === 'road') {
